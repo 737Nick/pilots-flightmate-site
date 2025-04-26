@@ -11,17 +11,40 @@
       padding: 0;
       background: #f7faff;
       color: #1a1a1a;
+      box-sizing: border-box;
     }
     header {
-      background: #003366;
+      background: linear-gradient(135deg, #003366, #005f8b);
       color: white;
       padding: 1.5rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #ccc;
     }
     header h1 {
       font-size: 1.5rem;
+      margin: 0;
+    }
+    .appstore-badge {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .appstore-badge img {
+      height: 50px;
+      transition: transform 0.3s ease;
+    }
+    .appstore-badge img:hover {
+      transform: scale(1.05);
+    }
+    .appstore-badge small {
+      color: #aad4ff;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
     }
     .hero {
       display: flex;
@@ -29,11 +52,12 @@
       align-items: center;
       text-align: center;
       padding: 4rem 2rem;
-      background: white;
+      background: linear-gradient(135deg, #ffffff, #f2f7fd);
     }
     .hero img {
       max-width: 300px;
       margin-top: 2rem;
+      animation: bounce 2s infinite;
     }
     .features {
       display: flex;
@@ -49,15 +73,26 @@
       border-radius: 8px;
       padding: 1.5rem;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+    .feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
     .feature h3 {
       margin-top: 0;
     }
     footer {
-      background: #003366;
+      background: linear-gradient(135deg, #003366, #005f8b);
       color: white;
       padding: 2rem;
       text-align: center;
+      margin-top: 3rem;
+      border-top: 1px solid #ccc;
+    }
+    footer a {
+      color: #aad4ff;
+      text-decoration: none;
     }
     .btn {
       background: #007aff;
@@ -69,26 +104,37 @@
       font-size: 1rem;
       margin-top: 1rem;
       display: inline-block;
+      transition: background-color 0.3s ease;
     }
-    section#privacy {
-      padding: 4rem 2rem;
-      background: white;
-      text-align: left;
+    .btn:hover {
+      background-color: #005f8b;
     }
-    section#privacy h2 {
-      color: #003366;
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
     }
-    hr {
-      border: none;
-      border-top: 1px solid #ccc;
-      margin: 4rem 0;
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Pilot's FlightMate</h1>
-    <a href="#privacy" class="btn">Privacy Policy</a>
+    <div class="appstore-badge">
+      <a href="https://apps.apple.com/app/id6739976699" target="_blank" rel="noopener">
+        <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store">
+      </a>
+      <small>Available for iPhone and iPad • Requires iOS 17 or later</small>
+    </div>
   </header>
 
   <section class="hero">
@@ -112,27 +158,8 @@
     </div>
   </section>
 
-  <hr>
-
-  <section id="privacy">
-    <h2>Privacy Policy</h2>
-    <p><strong>Effective date:</strong> April 26, 2025</p>
-    <p><strong>Pilot's FlightMate</strong> does not collect, store, or share any personal information. 
-    The app operates entirely on your device and does not require user registration or account creation.</p>
-    <p><strong>Data Collection:</strong>  
-    We do not collect or transmit any personal data. Downloaded roster information and any calculations remain on your device.</p>
-    <p><strong>Third-Party Services:</strong>  
-    This app does not use analytics, advertising, or tracking services.</p>
-    <p><strong>Data Security:</strong>  
-    All data stays locally on your device. No information is transmitted externally.</p>
-    <p><strong>Contact:</strong>  
-    If you have questions about this privacy policy, you can email us at 
-    <a href="mailto:support@flightm8.app" style="color: #007aff;">support@flightm8.app</a>.
-    </p>
-  </section>
-
   <footer>
-    <p>Contact: <a href="mailto:support@flightm8.app" style="color: #aad4ff">support@flightm8.app</a></p>
+    <p>Contact: <a href="mailto:support@flightm8.app">support@flightm8.app</a></p>
     <p>&copy; 2025 Pilot's FlightMate</p>
   </footer>
 </body>
