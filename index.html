@@ -16,19 +16,28 @@
       background: linear-gradient(135deg, #003366, #005f8b);
       color: white;
       padding: 1.5rem 2rem;
+      display: flex;
+      flex-direction: column; /* Mobile: stacked */
+      align-items: center;
       text-align: center;
     }
     header h1 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      margin: 0;
     }
-    .appstore-badge img {
-      max-width: 200px;
-      height: auto;
+    header .appstore-badge {
+      margin-top: 1rem;
     }
-    .appstore-badge p {
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
+    @media (min-width: 600px) {
+      header {
+        flex-direction: row; /* Desktop: side by side */
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+      }
+      header .appstore-badge {
+        margin-top: 0;
+      }
     }
     .hero {
       display: flex;
@@ -90,7 +99,7 @@
     }
     section#privacy {
       padding: 4rem 2rem;
-      background: #e6f0ff; /* Updated to match Features */
+      background: #e6f0ff; /* Same as feature section */
       text-align: left;
     }
     section#privacy h2 {
