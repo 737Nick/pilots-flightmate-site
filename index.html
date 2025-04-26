@@ -124,6 +124,40 @@
       0% { opacity: 0; }
       100% { opacity: 1; }
     }
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding-top: 60px;
+    }
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 600px;
+      border-radius: 10px;
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -161,6 +195,42 @@
   <footer>
     <p>Contact: <a href="mailto:support@flightm8.app">support@flightm8.app</a></p>
     <p>&copy; 2025 Pilot's FlightMate</p>
+    <p><a href="#" id="privacyLink">Privacy Policy</a></p>
   </footer>
+
+  <!-- Modal -->
+  <div id="privacyModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h1>Privacy Policy</h1>
+      <p>Effective Date: [Insert Date]</p>
+      <p>Your privacy is important to us. This Privacy Policy outlines the types of personal information we collect and how it is used, shared, and protected when you use the Pilot's FlightMate app.</p>
+      <!-- Add your full privacy policy content here -->
+    </div>
+  </div>
+
+  <script>
+    // Get modal and elements
+    var modal = document.getElementById("privacyModal");
+    var privacyLink = document.getElementById("privacyLink");
+    var closeModal = document.getElementById("closeModal");
+
+    // Show the modal when Privacy Policy link is clicked
+    privacyLink.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // Close the modal when the close button is clicked
+    closeModal.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // Close the modal if the user clicks anywhere outside of the modal content
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
 </body>
 </html>
