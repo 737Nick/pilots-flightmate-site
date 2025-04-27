@@ -17,7 +17,7 @@
       color: white;
       padding: 1.5rem 2rem;
       display: flex;
-      flex-direction: column; /* Mobile: stacked */
+      flex-direction: column;
       align-items: center;
       text-align: center;
     }
@@ -25,12 +25,17 @@
       font-size: 2.5rem;
       margin: 0;
     }
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.25rem;
+      font-weight: 400;
+    }
     header .appstore-badge {
       margin-top: 1rem;
     }
     @media (min-width: 600px) {
       header {
-        flex-direction: row; /* Desktop: side by side */
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
         text-align: left;
@@ -51,10 +56,24 @@
       width: 300px;
       height: 300px;
       margin-top: 2rem;
-      animation: bounce 2s infinite;
-      border-radius: 20%; /* 🛩 More accurate to iOS "squircle" rounding */
+      border-radius: 20%;
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
       object-fit: cover;
+      animation: float 6s ease-in-out infinite;
+    }
+    .hero .free-badge {
+      background: #007aff;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+      font-weight: 600;
+      display: inline-block;
+    }
+    @keyframes float {
+      0% { transform: translatey(0px); }
+      50% { transform: translatey(-8px); }
+      100% { transform: translatey(0px); }
     }
     .features {
       display: flex;
@@ -70,9 +89,11 @@
       border-radius: 8px;
       padding: 1.5rem;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      text-align: center;
     }
     .feature h3 {
       margin-top: 0;
+      font-size: 1.25rem;
     }
     footer {
       background: linear-gradient(135deg, #003366, #005f8b);
@@ -81,55 +102,33 @@
       text-align: center;
       margin-top: 3rem;
       border-top: 1px solid #ccc;
+      font-size: 0.9rem;
     }
     footer a {
       color: #aad4ff;
       text-decoration: none;
-    }
-    .btn {
-      background: #007aff;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      font-size: 1rem;
-      margin-top: 1rem;
-      display: inline-block;
-      transition: background-color 0.3s ease;
-    }
-    .btn:hover {
-      background-color: #005f8b;
-    }
-    section#privacy {
-      padding: 4rem 2rem;
-      background: #e6f0ff; /* Same as feature section */
-      text-align: left;
-    }
-    section#privacy h2 {
-      color: #003366;
     }
     hr {
       border: none;
       border-top: 1px solid #ccc;
       margin: 4rem 0;
     }
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-      }
-      40% {
-        transform: translateY(-10px);
-      }
-      60% {
-        transform: translateY(-5px);
-      }
+    section#privacy {
+      padding: 4rem 2rem;
+      background: #e6f0ff;
+      text-align: left;
+    }
+    section#privacy h2 {
+      color: #003366;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Pilot's FlightMate</h1>
+    <div>
+      <h1>Pilot's FlightMate</h1>
+      <p>Smarter tools. Safer flights. Free forever.</p>
+    </div>
     <div class="appstore-badge">
       <a href="https://apps.apple.com/app/id6739976699" target="_blank" rel="noopener">
         <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store">
@@ -139,24 +138,24 @@
   </header>
 
   <section class="hero">
-    <h2>Flight tools made simple for pilots</h2>
-    <p>An app for pilots to check fuel, calculate duty and rest times, and download their roster.</p>
-  <p><strong>Completely free • No ads • All features included</strong></p>
+    <h2>Spend less time calculating, more time flying</h2>
+    <p>FlightMate puts essential flight tools at your fingertips — built by pilots, for pilots.</p>
+    <div class="free-badge">Completely free • No ads • All features included</div>
     <img src="icon.jpg" alt="App Icon" />
   </section>
 
   <section class="features">
     <div class="feature">
-      <h3>Check Fuel</h3>
-      <p>Calculate the difference between uplift and on-board fuel quickly and accurately.</p>
+      <h3>✈️ Fuel Checks in Seconds</h3>
+      <p>Calculate uplift vs on-board fuel quickly and accurately — no manual guesswork.</p>
     </div>
     <div class="feature">
-      <h3>Calculate Duty and Rest</h3>
-      <p>Input all relevant times to get instant duty and rest period calculations.</p>
+      <h3>⏱️ Stay Legal, Stay Safe</h3>
+      <p>Instantly compute your duty and rest periods based on your operation's rules.</p>
     </div>
     <div class="feature">
-      <h3>Download Roster</h3>
-      <p>Export your roster directly to your Apple Calendar for seamless sharing.</p>
+      <h3>🗓️ Your Schedule, Anywhere</h3>
+      <p>Download your roster straight into your Calendar — available anytime, anywhere.</p>
     </div>
   </section>
 
@@ -165,23 +164,17 @@
   <section id="privacy">
     <h2>Privacy Policy</h2>
     <p><strong>Effective date:</strong> April 26, 2025</p>
-    <p><strong>Pilot's FlightMate</strong> does not collect, store, or share any personal information. 
-    The app operates entirely on your device and does not require user registration or account creation.</p>
-    <p><strong>Data Collection:</strong>  
-    We do not collect or transmit any personal data. Downloaded roster information and any calculations remain on your device.</p>
-    <p><strong>Third-Party Services:</strong>  
-    This app does not use analytics, advertising, or tracking services.</p>
-    <p><strong>Data Security:</strong>  
-    All data stays locally on your device. No information is transmitted externally.</p>
-    <p><strong>Contact:</strong>  
-    If you have questions about this privacy policy, you can email us at 
-    <a href="mailto:support@flightm8.app" style="color: #007aff;">support@flightm8.app</a>.
-    </p>
+    <p><strong>Pilot's FlightMate</strong> does not collect, store, or share any personal information. The app operates entirely on your device and does not require user registration or account creation.</p>
+    <p><strong>Data Collection:</strong> We do not collect or transmit any personal data. Downloaded roster information and any calculations remain on your device.</p>
+    <p><strong>Third-Party Services:</strong> This app does not use analytics, advertising, or tracking services.</p>
+    <p><strong>Data Security:</strong> All data stays locally on your device. No information is transmitted externally.</p>
+    <p><strong>Contact:</strong> If you have questions about this privacy policy, you can email us at <a href="mailto:support@flightm8.app" style="color: #007aff;">support@flightm8.app</a>.</p>
   </section>
 
   <footer>
-    <p>Contact: <a href="mailto:support@flightm8.app" style="color: #aad4ff">support@flightm8.app</a></p>
+    <p>Contact: <a href="mailto:support@flightm8.app">support@flightm8.app</a></p>
     <p>&copy; 2025 Pilot's FlightMate</p>
+    <p style="margin-top: 1rem;">Made with ❤️ by a fellow pilot</p>
   </footer>
 </body>
 </html>
