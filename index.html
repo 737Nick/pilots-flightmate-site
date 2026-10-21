@@ -128,9 +128,41 @@
       text-align: left;
       box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.05);
     }
-    section#privacy h2 {
+    section#privacy h2, section#privacy h3 {
       color: #003366;
     }
+    .airline-request {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+    .airline-request h2 { color: #003366; }
+    .airline-request form { display: grid; gap: 1rem; }
+    .airline-request label { display: grid; gap: 0.4rem; }
+    .airline-request input[type="text"],
+    .airline-request select,
+    .airline-request textarea {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #768597;
+      border-radius: 8px;
+      background: white;
+      color: inherit;
+      font: inherit;
+    }
+    .airline-request .tester-choice { display: block; }
+    .airline-request button {
+      justify-self: start;
+      padding: 0.85rem 1.2rem;
+      border: 0;
+      border-radius: 8px;
+      background: #005f8b;
+      color: white;
+      font: inherit;
+      cursor: pointer;
+    }
+    .airline-request :focus-visible { outline: 3px solid #007aff; outline-offset: 3px; }
   </style>
 </head>
 <body>
@@ -169,22 +201,119 @@
     </div>
   </section>
 
+  <section class="airline-request" id="suggest-airline" aria-labelledby="airline-heading">
+    <h2 id="airline-heading">Help us bring FlightMate to your airline</h2>
+    <p>Is your airline missing? Tell us which airline and roster system you use. You can also offer to help test future support.</p>
+    <form id="airline-form" action="mailto:aircrewflightmate@gmail.com" method="post" enctype="text/plain" aria-describedby="airline-email-note">
+      <label for="airline">Airline
+        <input id="airline" name="airline" type="text" required pattern=".*\S.*" title="Enter your airline's name." maxlength="100" autocomplete="organization">
+      </label>
+      <label for="roster-system">Roster system or portal (optional)
+        <input id="roster-system" name="roster-system" type="text" maxlength="120" placeholder="For example, the name of your crew portal">
+      </label>
+      <label for="crew-role">Your role (optional)
+        <select id="crew-role" name="crew-role">
+          <option value="">Select a role</option>
+          <option>Pilot</option>
+          <option>Cabin crew</option>
+          <option>Other</option>
+        </select>
+      </label>
+      <label class="tester-choice" for="help-test">
+        <input id="help-test" name="help-test" type="checkbox"> I would like to help test support for my airline.
+      </label>
+      <label for="airline-notes">Anything else? (optional)
+        <textarea id="airline-notes" name="airline-notes" rows="3" maxlength="600"></textarea>
+      </label>
+      <p id="airline-email-note">This opens your email app. Review the message and choose Send to contact us. Please do not include passwords, login tokens, or personal roster and crew data. <a href="#website-privacy">How we handle your enquiry</a>.</p>
+      <button type="submit">Open email to suggest an airline</button>
+    </form>
+    <p>No email app configured? Email your airline and roster system to <a href="mailto:aircrewflightmate@gmail.com?subject=New%20airline%20support%20request">aircrewflightmate@gmail.com</a>.</p>
+  </section>
+
   <hr>
 
   <section id="privacy">
-    <h2>Privacy Policy</h2>
-    <p><strong>Effective date:</strong> April 26, 2025</p>
-    <p><strong>Aircrew FlightMate</strong> does not collect, store, or share any personal information. The app operates entirely on your device and does not require user registration or account creation.</p>
-    <p><strong>Data Collection:</strong> We do not collect or transmit any personal data. Downloaded roster information and any calculations remain on your device.</p>
-    <p><strong>Third-Party Services:</strong> This app does not use analytics, advertising, or tracking services.</p>
-    <p><strong>Data Security:</strong> All data stays locally on your device. No information is transmitted externally.</p>
-    <p><strong>Contact:</strong> If you have questions about this privacy policy, you can email us at <a href="mailto:support@flightm8.app" style="color: #007aff;">support@flightm8.app</a>.</p>
+    <p><a href="privacy-android.html">Android Privacy Policy</a> · <a href="#website-privacy">Website and Email Privacy</a></p>
+    <h2>Privacy Policy for Aircrew FlightMate iOS</h2>
+    <p class="date">Policy version: 10 August 2026</p>
+
+    <h3>1. Introduction</h3>
+    <p>Aircrew FlightMate respects your privacy. This policy explains how your personal information is handled when using the app.</p>
+
+    <h3>2. What Information We Collect</h3>
+    <p>Aircrew FlightMate can store the following information on your device:</p>
+    <ul>
+      <li>Your airline login email or username and password, when you choose to save them.</li>
+      <li>Your duty roster, crew profile, app preferences, and temporary cached data.</li>
+    </ul>
+    <p>When you prepare feedback, the app places your message, app version and build, submission time, and any name you provide in Apple’s system mail composer. Your name may be prefilled from your local crew profile, but you can change or remove it. The recipient can see the sender address of the Mail account used to send the message. You can separately choose to attach parsed roster data as JSON, the original roster source as HTML, or both. These attachments may contain roster and crew information and are disabled by default. Nothing is sent until you choose Send in the mail composer.</p>
+
+    <h3>3. How Your Information Is Used</h3>
+    <p>Your credentials are used only to sign in to your airline’s portal in the app and retrieve your roster. They are sent directly to the airline portal; the developer does not receive them.</p>
+    <p>Weather features send the airport identifier or coordinates needed for the request to Apple WeatherKit or AVWX. They do not send your airline credentials or roster.</p>
+    <p>Feedback sent by email is used only to review your request, troubleshoot the reported issue, and respond when necessary. Aircrew FlightMate does not use your information for advertising or tracking and does not sell your personal data.</p>
+
+    <h3>4. External Services</h3>
+    <p>Aircrew FlightMate uses these external services only when their related feature is used:</p>
+    <ul>
+      <li>Your airline portal for roster access.</li>
+      <li>Apple WeatherKit and AVWX for weather information.</li>
+      <li>The email account configured for Apple Mail and the recipient’s email provider when you send feedback.</li>
+    </ul>
+    <p>These providers process requests under their own privacy terms and may process data in countries outside your own, subject to applicable data-transfer safeguards.</p>
+
+    <h3>5. Storage and Retention</h3>
+    <p>Saved credentials are protected by Apple’s Keychain. Roster data, crew information, preferences, and caches are stored in the app’s local storage.</p>
+    <p>Local app data remains until you remove it or delete the app. Because Keychain items can persist independently of normal app files, remove saved credentials in the app if you want to ensure they are deleted.</p>
+    <p>Sent feedback may remain in your email provider’s sent mailbox and in the developer’s Gmail mailbox. The developer keeps feedback only as long as reasonably necessary to review the request, respond, troubleshoot, and maintain the related support record. Attached roster JSON or HTML is used only for that support purpose.</p>
+
+    <h3>6. Your Choices and Rights</h3>
+    <p>Sending feedback is optional. You can review, edit, or cancel the email in Apple’s mail composer before it is sent, and roster files are attached only when you explicitly enable the related options. Please avoid including information that is not needed to handle your request.</p>
+    <p>Subject to applicable data-protection law, you may request access, correction, restriction, or deletion of personal data included in feedback. You may also object to processing or withdraw consent where consent is the basis for processing.</p>
+
+    <h3>7. Contact</h3>
+    <p>If you have a privacy question or want to exercise your rights, contact the developer through the Help &amp; Feedback page in the app or at <a href="mailto:aircrewflightmate@gmail.com">aircrewflightmate@gmail.com</a>.</p>
+
+    <h3>8. Changes to This Policy</h3>
+    <p>This policy may be updated when the app’s data practices or services change. The version date shown on the Privacy Policy page identifies the current policy.</p>
+
+    <h2 id="website-privacy">Website and Email Privacy</h2>
+    <p><strong>Last updated:</strong> 21 October 2026</p>
+    <p>This website is hosted by GitHub Pages and loads the App Store badge from Apple. Visiting the site connects your browser to these providers, which may process technical request information, including your IP address, under their own privacy terms. See the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a> and <a href="https://www.apple.com/legal/privacy/">Apple Privacy Policy</a>.</p>
+    <p>If you email the developer, your email address and the information you choose to send are received in the developer's Gmail mailbox. They are used to handle your enquiry and reply, and are retained only as long as reasonably necessary for that purpose and the related support record. Your email provider and the recipient's provider process the message under their own privacy terms.</p>
+    <p>The airline suggestion form prepares an email on your device with your airline, any roster system or role you provide, your testing preference, and any additional notes. The form does not submit these details to a form service. Nothing is sent to the developer until you choose Send in your email app. If you send the message, it is used to evaluate possible airline support and contact you about your enquiry or your offer to help test. It is retained only as long as reasonably necessary for that evaluation and follow-up. This does not subscribe you to a newsletter.</p>
+    <p>Please do not send passwords, login tokens, or personal roster and crew information that is not needed for your enquiry. For questions about your information or a request for access, correction, or deletion, contact <a href="mailto:aircrewflightmate@gmail.com">aircrewflightmate@gmail.com</a>.</p>
   </section>
 
   <footer>
-    <p>Contact: <a href="mailto:support@flightm8.app">support@flightm8.app</a></p>
+    <p>Contact: <a href="mailto:aircrewflightmate@gmail.com">aircrewflightmate@gmail.com</a></p>
+    <p><a href="#privacy">iOS Privacy Policy</a> · <a href="privacy-android.html">Android Privacy Policy</a> · <a href="#website-privacy">Website Privacy</a></p>
     <p>&copy; 2025 Aircrew FlightMate</p>
     <p style="margin-top: 1rem;">Made with ❤️ by a fellow pilot</p>
   </footer>
+  <script>
+    /** Opens a user-reviewable airline enquiry in the visitor's email app without submitting form data to a server. */
+    function prepareAirlineEmail(event) {
+      event.preventDefault();
+      const form = event.currentTarget;
+      const fields = new FormData(form);
+      const body = [
+        'Hello Aircrew FlightMate,',
+        '',
+        'I would like to suggest support for this airline:',
+        'Airline: ' + fields.get('airline').trim(),
+        'Roster system or portal: ' + (fields.get('roster-system').trim() || 'Not provided'),
+        'Role: ' + (fields.get('crew-role') || 'Not provided'),
+        'I would like to help test: ' + (fields.has('help-test') ? 'Yes' : 'No'),
+        '',
+        'Additional notes:',
+        fields.get('airline-notes').trim() || 'None'
+      ].join('\r\n');
+      window.location.href = 'mailto:aircrewflightmate@gmail.com?subject='
+        + encodeURIComponent('New airline support request') + '&body=' + encodeURIComponent(body);
+    }
+    document.getElementById('airline-form').addEventListener('submit', prepareAirlineEmail);
+  </script>
 </body>
 </html>
