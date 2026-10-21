@@ -4,166 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aircrew FlightMate</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f7faff;
-      color: #1a1a1a;
-    }
-    header {
-      background: linear-gradient(135deg, #003366, #005f8b);
-      color: white;
-      padding: 1.5rem 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-    header h1 {
-      font-size: 2rem;
-      margin: 0;
-    }
-    header p {
-      margin-top: 0.5rem;
-      font-size: 1.25rem;
-      font-weight: 400;
-    }
-    header .appstore-badge {
-      margin-top: 1rem;
-    }
-    @media (min-width: 600px) {
-      header {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        text-align: left;
-      }
-      header .appstore-badge {
-        margin-top: 0;
-      }
-    }
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 4rem 2rem;
-      background: linear-gradient(135deg, #ffffff, #f2f7fd);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    }
-    .hero img {
-      width: 300px;
-      height: 300px;
-      margin-top: 2rem;
-      border-radius: 20%;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-      object-fit: cover;
-      animation: float 6s ease-in-out infinite;
-    }
-    .hero .free-badge {
-      background: #007aff;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      margin-top: 1rem;
-      font-weight: 600;
-      display: inline-block;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-    }
-    @keyframes float {
-      0% { transform: translatey(0px); }
-      50% { transform: translatey(-8px); }
-      100% { transform: translatey(0px); }
-    }
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 3rem 2rem;
-      background: #e6f0ff;
-    }
-    .feature {
-      max-width: 300px;
-      margin: 1rem;
-      background: white;
-      border-radius: 8px;
-      padding: 1.5rem;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .feature:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    }
-    .feature h3 {
-      margin-top: 0;
-      font-size: 1.25rem;
-    }
-    footer {
-      background: linear-gradient(135deg, #003366, #005f8b);
-      color: white;
-      padding: 2rem;
-      text-align: center;
-      margin-top: 3rem;
-      border-top: 1px solid #ccc;
-      font-size: 0.9rem;
-      box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.15);
-    }
-    footer a {
-      color: #aad4ff;
-      text-decoration: none;
-    }
-    hr {
-      border: none;
-      border-top: 1px solid #ccc;
-      margin: 4rem 0;
-    }
-    section#privacy {
-      padding: 4rem 2rem;
-      background: #e6f0ff;
-      text-align: left;
-      box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.05);
-    }
-    section#privacy h2, section#privacy h3 {
-      color: #003366;
-    }
-    .airline-request {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 3rem 2rem;
-    }
-    .airline-request h2 { color: #003366; }
-    .airline-request form { display: grid; gap: 1rem; }
-    .airline-request label { display: grid; gap: 0.4rem; }
-    .airline-request input[type="text"],
-    .airline-request select,
-    .airline-request textarea {
-      box-sizing: border-box;
-      width: 100%;
-      padding: 0.75rem;
-      border: 1px solid #768597;
-      border-radius: 8px;
-      background: white;
-      color: inherit;
-      font: inherit;
-    }
-    .airline-request .tester-choice { display: block; }
-    .airline-request button {
-      justify-self: start;
-      padding: 0.85rem 1.2rem;
-      border: 0;
-      border-radius: 8px;
-      background: #005f8b;
-      color: white;
-      font: inherit;
-      cursor: pointer;
-    }
-    .airline-request :focus-visible { outline: 3px solid #007aff; outline-offset: 3px; }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
@@ -178,6 +19,16 @@
       <p>Available for iPhone and iPad • Requires iOS 17 or later</p>
     </div>
   </header>
+  <nav class="site-nav" aria-label="Main navigation">
+    <a href="./" aria-current="page">Home</a>
+    <a href="./#features">Features</a>
+    <a href="./#suggest-airline">Suggest an airline</a>
+    <a href="privacy-ios.html">iOS Privacy</a>
+    <a href="privacy-android.html">Android Privacy</a>
+    <a href="privacy-website.html">Website Privacy</a>
+  </nav>
+
+  <main>
 
   <section class="hero">
     <h2>Spend less time calculating, more time flying</h2>
@@ -186,7 +37,7 @@
     <img src="icon.jpg" alt="App Icon" />
   </section>
 
-  <section class="features">
+  <section class="features" id="features">
     <div class="feature">
       <h3>✈️ Fuel Checks in Seconds</h3>
       <p>Calculate uplift vs on-board fuel quickly and accurately — no manual guesswork.</p>
@@ -225,70 +76,17 @@
       <label for="airline-notes">Anything else? (optional)
         <textarea id="airline-notes" name="airline-notes" rows="3" maxlength="600"></textarea>
       </label>
-      <p id="airline-email-note">This opens your email app. Review the message and choose Send to contact us. Please do not include passwords, login tokens, or personal roster and crew data. <a href="#website-privacy">How we handle your enquiry</a>.</p>
+      <p id="airline-email-note">This opens your email app. Review the message and choose Send to contact us. Please do not include passwords, login tokens, or personal roster and crew data. <a href="privacy-website.html">How we handle your enquiry</a>.</p>
       <button type="submit">Open email to suggest an airline</button>
     </form>
     <p>No email app configured? Email your airline and roster system to <a href="mailto:aircrewflightmate@gmail.com?subject=New%20airline%20support%20request">aircrewflightmate@gmail.com</a>.</p>
   </section>
 
-  <hr>
-
-  <section id="privacy">
-    <p><a href="privacy-android.html">Android Privacy Policy</a> · <a href="#website-privacy">Website and Email Privacy</a></p>
-    <h2>Privacy Policy for Aircrew FlightMate iOS</h2>
-    <p class="date">Policy version: 10 August 2026</p>
-
-    <h3>1. Introduction</h3>
-    <p>Aircrew FlightMate respects your privacy. This policy explains how your personal information is handled when using the app.</p>
-
-    <h3>2. What Information We Collect</h3>
-    <p>Aircrew FlightMate can store the following information on your device:</p>
-    <ul>
-      <li>Your airline login email or username and password, when you choose to save them.</li>
-      <li>Your duty roster, crew profile, app preferences, and temporary cached data.</li>
-    </ul>
-    <p>When you prepare feedback, the app places your message, app version and build, submission time, and any name you provide in Apple’s system mail composer. Your name may be prefilled from your local crew profile, but you can change or remove it. The recipient can see the sender address of the Mail account used to send the message. You can separately choose to attach parsed roster data as JSON, the original roster source as HTML, or both. These attachments may contain roster and crew information and are disabled by default. Nothing is sent until you choose Send in the mail composer.</p>
-
-    <h3>3. How Your Information Is Used</h3>
-    <p>Your credentials are used only to sign in to your airline’s portal in the app and retrieve your roster. They are sent directly to the airline portal; the developer does not receive them.</p>
-    <p>Weather features send the airport identifier or coordinates needed for the request to Apple WeatherKit or AVWX. They do not send your airline credentials or roster.</p>
-    <p>Feedback sent by email is used only to review your request, troubleshoot the reported issue, and respond when necessary. Aircrew FlightMate does not use your information for advertising or tracking and does not sell your personal data.</p>
-
-    <h3>4. External Services</h3>
-    <p>Aircrew FlightMate uses these external services only when their related feature is used:</p>
-    <ul>
-      <li>Your airline portal for roster access.</li>
-      <li>Apple WeatherKit and AVWX for weather information.</li>
-      <li>The email account configured for Apple Mail and the recipient’s email provider when you send feedback.</li>
-    </ul>
-    <p>These providers process requests under their own privacy terms and may process data in countries outside your own, subject to applicable data-transfer safeguards.</p>
-
-    <h3>5. Storage and Retention</h3>
-    <p>Saved credentials are protected by Apple’s Keychain. Roster data, crew information, preferences, and caches are stored in the app’s local storage.</p>
-    <p>Local app data remains until you remove it or delete the app. Because Keychain items can persist independently of normal app files, remove saved credentials in the app if you want to ensure they are deleted.</p>
-    <p>Sent feedback may remain in your email provider’s sent mailbox and in the developer’s Gmail mailbox. The developer keeps feedback only as long as reasonably necessary to review the request, respond, troubleshoot, and maintain the related support record. Attached roster JSON or HTML is used only for that support purpose.</p>
-
-    <h3>6. Your Choices and Rights</h3>
-    <p>Sending feedback is optional. You can review, edit, or cancel the email in Apple’s mail composer before it is sent, and roster files are attached only when you explicitly enable the related options. Please avoid including information that is not needed to handle your request.</p>
-    <p>Subject to applicable data-protection law, you may request access, correction, restriction, or deletion of personal data included in feedback. You may also object to processing or withdraw consent where consent is the basis for processing.</p>
-
-    <h3>7. Contact</h3>
-    <p>If you have a privacy question or want to exercise your rights, contact the developer through the Help &amp; Feedback page in the app or at <a href="mailto:aircrewflightmate@gmail.com">aircrewflightmate@gmail.com</a>.</p>
-
-    <h3>8. Changes to This Policy</h3>
-    <p>This policy may be updated when the app’s data practices or services change. The version date shown on the Privacy Policy page identifies the current policy.</p>
-
-    <h2 id="website-privacy">Website and Email Privacy</h2>
-    <p><strong>Last updated:</strong> 21 October 2026</p>
-    <p>This website is hosted by GitHub Pages and loads the App Store badge from Apple. Visiting the site connects your browser to these providers, which may process technical request information, including your IP address, under their own privacy terms. See the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a> and <a href="https://www.apple.com/legal/privacy/">Apple Privacy Policy</a>.</p>
-    <p>If you email the developer, your email address and the information you choose to send are received in the developer's Gmail mailbox. They are used to handle your enquiry and reply, and are retained only as long as reasonably necessary for that purpose and the related support record. Your email provider and the recipient's provider process the message under their own privacy terms.</p>
-    <p>The airline suggestion form prepares an email on your device with your airline, any roster system or role you provide, your testing preference, and any additional notes. The form does not submit these details to a form service. Nothing is sent to the developer until you choose Send in your email app. If you send the message, it is used to evaluate possible airline support and contact you about your enquiry or your offer to help test. It is retained only as long as reasonably necessary for that evaluation and follow-up. This does not subscribe you to a newsletter.</p>
-    <p>Please do not send passwords, login tokens, or personal roster and crew information that is not needed for your enquiry. For questions about your information or a request for access, correction, or deletion, contact <a href="mailto:aircrewflightmate@gmail.com">aircrewflightmate@gmail.com</a>.</p>
-  </section>
+  </main>
 
   <footer>
     <p>Contact: <a href="mailto:aircrewflightmate@gmail.com">aircrewflightmate@gmail.com</a></p>
-    <p><a href="#privacy">iOS Privacy Policy</a> · <a href="privacy-android.html">Android Privacy Policy</a> · <a href="#website-privacy">Website Privacy</a></p>
+    <p id="privacy"><a href="privacy-ios.html">iOS Privacy Policy</a> · <a href="privacy-android.html">Android Privacy Policy</a> · <a id="website-privacy" href="privacy-website.html">Website Privacy</a></p>
     <p>&copy; 2025 Aircrew FlightMate</p>
     <p style="margin-top: 1rem;">Made with ❤️ by a fellow pilot</p>
   </footer>
@@ -314,6 +112,17 @@
         + encodeURIComponent('New airline support request') + '&body=' + encodeURIComponent(body);
     }
     document.getElementById('airline-form').addEventListener('submit', prepareAirlineEmail);
+
+    /** Keeps previously published homepage privacy anchors pointing to their dedicated policy pages. */
+    function redirectLegacyPrivacyLink() {
+      const destination = {
+        '#privacy': 'privacy-ios.html',
+        '#website-privacy': 'privacy-website.html'
+      }[window.location.hash];
+      if (destination) window.location.replace(destination);
+    }
+    redirectLegacyPrivacyLink();
+    window.addEventListener('hashchange', redirectLegacyPrivacyLink);
   </script>
 </body>
 </html>
