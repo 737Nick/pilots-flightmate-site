@@ -1,94 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aircrew FlightMate</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aircrew FlightMate — Roster, duty &amp; flight stats</title>
+  <meta name="description" content="A clearer view of your flying. Keep your roster, duty information and flight statistics together with Aircrew FlightMate.">
+  <link rel="icon" type="image/png" href="assets/app-icon.png">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <div>
-      <h1>Aircrew FlightMate</h1>
-      <p>Smarter tools. Safer flights. Free forever.</p>
-    </div>
-    <div class="appstore-badge">
-      <a href="https://apps.apple.com/app/id6739976699" target="_blank" rel="noopener">
-        <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <div class="header-content">
+      <a class="brand" href="./" aria-label="Aircrew FlightMate home">
+        <img src="assets/app-icon.png" alt="" width="35" height="35">
+        <span>Aircrew FlightMate</span>
       </a>
-      <p>Available for iPhone and iPad • Requires iOS 17 or later</p>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="./#features">Features</a>
+        <a class="airline-nav" href="./#suggest-airline">Suggest an airline<span class="sparkles" aria-hidden="true"><span>✦</span><span>✦</span><span>✧</span></span></a>
+      </nav>
+      <a class="button header-download" href="./#download"><span aria-hidden="true">↓</span> Get the app</a>
     </div>
   </header>
-  <nav class="site-nav" aria-label="Main navigation">
-    <a href="./" aria-current="page">Home</a>
-    <a href="./#features">Features</a>
-    <a href="./#suggest-airline">Suggest an airline</a>
-    <a href="privacy-ios.html">iOS Privacy</a>
-    <a href="privacy-android.html">Android Privacy</a>
-    <a href="privacy-website.html">Website Privacy</a>
-  </nav>
 
-  <main>
+  <main id="main-content">
+    <section class="hero" aria-labelledby="home-heading">
+      <p class="eyebrow">Roster · Duty · Statistics</p>
+      <h1 id="home-heading">A clearer view <br><span>of your flying.</span></h1>
+      <p class="hero-description">Your roster, duty information, and flight statistics. <br>Everything you need for your flying day, in one clear view.</p>
+      <p class="hero-tagline">Built by aircrew, for aircrew.</p>
+      <div class="phone-stage">
+        <div class="phone-glow" aria-hidden="true"></div>
+        <div class="phones">
+          <figure class="phone phone-left">
+            <div class="phone-frame"><img src="assets/roster-screen.jpg" alt="FlightMate roster list with flights, standby and reporting times" width="506" height="1100" decoding="async"></div>
+            <figcaption>Your roster</figcaption>
+          </figure>
+          <figure class="phone phone-center">
+            <div class="phone-frame"><img src="assets/home-screen.jpg" alt="FlightMate Home with upcoming duties and flight statistics" width="506" height="1100" fetchpriority="high"></div>
+            <figcaption>Your day at a glance</figcaption>
+          </figure>
+          <figure class="phone phone-right">
+            <div class="phone-frame"><img src="assets/statistics-screen.jpg" alt="FlightMate statistics with rolling block and duty hours" width="506" height="1100" decoding="async"></div>
+            <figcaption>Your progress</figcaption>
+          </figure>
+        </div>
+        <p class="platform-note">Shown on iPhone. Features vary by platform.</p>
+      </div>
+    </section>
 
-  <section class="hero">
-    <h2>Spend less time calculating, more time flying</h2>
-    <p>FlightMate puts essential flight tools at your fingertips — built by aircrew, for aircrew.</p>
-    <div class="free-badge">Completely free • No ads • All features included</div>
-    <img src="icon.jpg" alt="App Icon" />
-  </section>
+    <section class="features section" id="features" aria-labelledby="features-heading">
+      <div class="section-heading">
+        <p class="eyebrow">Made for your everyday flying</p>
+        <h2 id="features-heading">One place for <br>your flying day.</h2>
+        <p>Less switching between tools.<br>More clarity, from your next duty to your yearly overview.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature">
+          <svg class="feature-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="10" rx="1.5"/><rect x="14" y="3" width="7" height="6" rx="1.5"/><rect x="3" y="17" width="7" height="4" rx="1.5"/><rect x="14" y="13" width="7" height="8" rx="1.5"/></svg>
+          <div><h3>A Home that works for you</h3><p>Keep upcoming duties, duty and rest status, and the figures you use most in view. Arrange widgets around your workflow.</p></div>
+        </article>
+        <article class="feature">
+          <svg class="feature-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 11h18M7 15h2m3 0h2m3 0h1M7 18h2m3 0h2"/></svg>
+          <div><h3>Your roster, your way</h3><p>Switch between list, calendar, and HTML views. Download current or historical rosters on iPad, then export and AirDrop a roster to iPhone.</p></div>
+        </article>
+        <article class="feature">
+          <svg class="feature-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18M7 15l5-5 4 3 5-7M17 6h4v4"/></svg>
+          <div><h3>Understand your flying</h3><p>Explore block and duty hours, FDP, rolling limits, FLX points, activity, nights away, and allowances. Review monthly and yearly trends.</p></div>
+        </article>
+        <article class="feature">
+          <svg class="feature-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M8 6h8M8 10h2m4 0h2m-8 4h2m4 0h2m-8 4h2m4 0h2"/></svg>
+          <div><h3>The tools you reach for</h3><p>Fuel, in-flight rest, roster codes, publications, and holiday tools, together in one section.</p></div>
+        </article>
+      </div>
+      <div class="feature-notes">
+        <p>Export duties to your personal calendar, share a roster PDF, or try Demo Mode before connecting an airline account.</p>
+        <p class="platform-note">Features above are for iPhone and iPad. Direct roster downloads on iPhone are unavailable due to company policy; download on iPad, export, then AirDrop to iPhone. Android focuses on roster downloads, roster views, and change tracking.</p>
+        <p class="platform-note">FlightMate is a reference tool. Always check operational and regulatory information against official sources.</p>
+      </div>
+    </section>
 
-  <section class="features" id="features">
-    <div class="feature">
-      <h3>✈️ Fuel Checks in Seconds</h3>
-      <p>Calculate uplift vs on-board fuel quickly and accurately — no manual guesswork.</p>
-    </div>
-    <div class="feature">
-      <h3>⏱️ Stay Legal, Stay Safe</h3>
-      <p>Instantly compute your duty and rest periods based on your operation's rules.</p>
-    </div>
-    <div class="feature">
-      <h3>🗓️ Your Schedule, Anywhere</h3>
-      <p>Download your roster straight into your Calendar — available anytime, anywhere.</p>
-    </div>
-  </section>
+    <section class="airline-request section" id="suggest-airline" aria-labelledby="airline-heading">
+      <div class="airline-callout">
+        <div>
+          <p class="eyebrow">Help us expand FlightMate</p>
+          <h2 id="airline-heading">Bring FlightMate <br>to your airline.</h2>
+          <p>Is your airline missing? Tell us which airline and roster system you use. You can also help test future support.</p>
+        </div>
+        <div class="airline-action">
+          <a class="button button-light" href="#airline-form">Suggest a new airline <span aria-hidden="true">↗</span></a>
+          <p>Built around your feedback.</p>
+        </div>
+      </div>
+      <div class="airline-form-container">
+        <form id="airline-form" action="mailto:aircrewflightmate@gmail.com" method="post" enctype="text/plain" aria-describedby="airline-email-note">
+          <label for="airline">Airline
+            <input id="airline" name="airline" type="text" required pattern=".*\S.*" title="Enter your airline's name." maxlength="100" autocomplete="organization">
+          </label>
+          <label for="roster-system">Roster system or portal (optional)
+            <input id="roster-system" name="roster-system" type="text" maxlength="120" placeholder="For example, the name of your crew portal">
+          </label>
+          <label for="crew-role">Your role (optional)
+            <select id="crew-role" name="crew-role">
+              <option value="">Select a role</option>
+              <option>Pilot</option>
+              <option>Cabin crew</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label class="tester-choice" for="help-test">
+            <input id="help-test" name="help-test" type="checkbox"> I would like to help test support for my airline.
+          </label>
+          <label for="airline-notes">Anything else? (optional)
+            <textarea id="airline-notes" name="airline-notes" rows="3" maxlength="600"></textarea>
+          </label>
+          <p id="airline-email-note">This opens your email app. Review the message and choose Send to contact us. Please do not include passwords, login tokens, or personal roster and crew data. <a href="privacy-website.html">How we handle your enquiry</a>.</p>
+          <button class="button" type="submit">Open email to suggest an airline</button>
+        </form>
+        <p class="email-fallback">No email app configured? Email your airline and roster system to <a href="mailto:aircrewflightmate@gmail.com?subject=New%20airline%20support%20request">aircrewflightmate@gmail.com</a>.</p>
+      </div>
+    </section>
 
-  <section class="airline-request" id="suggest-airline" aria-labelledby="airline-heading">
-    <h2 id="airline-heading">Help us bring FlightMate to your airline</h2>
-    <p>Is your airline missing? Tell us which airline and roster system you use. You can also offer to help test future support.</p>
-    <form id="airline-form" action="mailto:aircrewflightmate@gmail.com" method="post" enctype="text/plain" aria-describedby="airline-email-note">
-      <label for="airline">Airline
-        <input id="airline" name="airline" type="text" required pattern=".*\S.*" title="Enter your airline's name." maxlength="100" autocomplete="organization">
-      </label>
-      <label for="roster-system">Roster system or portal (optional)
-        <input id="roster-system" name="roster-system" type="text" maxlength="120" placeholder="For example, the name of your crew portal">
-      </label>
-      <label for="crew-role">Your role (optional)
-        <select id="crew-role" name="crew-role">
-          <option value="">Select a role</option>
-          <option>Pilot</option>
-          <option>Cabin crew</option>
-          <option>Other</option>
-        </select>
-      </label>
-      <label class="tester-choice" for="help-test">
-        <input id="help-test" name="help-test" type="checkbox"> I would like to help test support for my airline.
-      </label>
-      <label for="airline-notes">Anything else? (optional)
-        <textarea id="airline-notes" name="airline-notes" rows="3" maxlength="600"></textarea>
-      </label>
-      <p id="airline-email-note">This opens your email app. Review the message and choose Send to contact us. Please do not include passwords, login tokens, or personal roster and crew data. <a href="privacy-website.html">How we handle your enquiry</a>.</p>
-      <button type="submit">Open email to suggest an airline</button>
-    </form>
-    <p>No email app configured? Email your airline and roster system to <a href="mailto:aircrewflightmate@gmail.com?subject=New%20airline%20support%20request">aircrewflightmate@gmail.com</a>.</p>
-  </section>
-
+    <section class="download" id="download" aria-labelledby="download-heading">
+      <img class="download-icon" src="assets/app-icon.png" alt="" width="55" height="55" loading="lazy">
+      <h2 id="download-heading">Your roster. Your duty.<br>One clear view.</h2>
+      <p>Get FlightMate for iPhone, iPad, and Android.</p>
+      <div class="store-links" role="group" aria-label="Download FlightMate">
+        <a class="appstore-badge" href="https://apps.apple.com/app/id6739976699" target="_blank" rel="noopener"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" width="150" height="50" loading="lazy"></a>
+        <a class="google-play-badge" href="https://play.google.com/store/apps/details?id=com.aircrew.flightmate.android" target="_blank" rel="noopener"><img src="assets/google-play-badge.svg" alt="Get it on Google Play" width="169" height="50" loading="lazy"></a>
+      </div>
+      <p class="availability">iOS/iPadOS 17.0.1 or later · Android focuses on roster downloads and change tracking.</p>
+    </section>
   </main>
 
-  <footer>
-    <p>Contact: <a href="mailto:aircrewflightmate@gmail.com">aircrewflightmate@gmail.com</a></p>
-    <p id="privacy"><a href="privacy-ios.html">iOS Privacy Policy</a> · <a href="privacy-android.html">Android Privacy Policy</a> · <a id="website-privacy" href="privacy-website.html">Website Privacy</a></p>
-    <p>&copy; 2025 Aircrew FlightMate</p>
-    <p style="margin-top: 1rem;">Made with ❤️ by a fellow pilot</p>
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div>
+        <a class="footer-brand" href="./">Aircrew FlightMate</a>
+        <p>Made by a fellow pilot · &copy; 2025 Aircrew FlightMate</p>
+      </div>
+      <nav class="footer-links" id="privacy" aria-label="Privacy and contact">
+        <a href="privacy-ios.html">iOS Privacy</a>
+        <a href="privacy-android.html">Android Privacy</a>
+        <a id="website-privacy" href="privacy-website.html">Website Privacy</a>
+        <a href="mailto:aircrewflightmate@gmail.com">Contact</a>
+      </nav>
+    </div>
   </footer>
   <script>
     /** Opens a user-reviewable airline enquiry in the visitor's email app without submitting form data to a server. */

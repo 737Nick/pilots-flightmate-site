@@ -4,24 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy - Aircrew FlightMate Android</title>
+  <link rel="icon" type="image/png" href="assets/app-icon.png">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <div>
-      <a class="brand" href="./">Aircrew FlightMate</a>
-      <p>Smarter tools. Safer flights. Free forever.</p>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <div class="header-content">
+      <a class="brand" href="./" aria-label="Aircrew FlightMate home">
+        <img src="assets/app-icon.png" alt="" width="35" height="35">
+        <span>Aircrew FlightMate</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="./#features">Features</a>
+        <a class="airline-nav" href="./#suggest-airline">Suggest an airline<span class="sparkles" aria-hidden="true"><span>✦</span><span>✦</span><span>✧</span></span></a>
+      </nav>
+      <a class="button header-download" href="./#download"><span aria-hidden="true">↓</span> Get the app</a>
     </div>
   </header>
-  <nav class="site-nav" aria-label="Main navigation">
-    <a href="./">Home</a>
-    <a href="./#features">Features</a>
-    <a href="./#suggest-airline">Suggest an airline</a>
-    <a href="privacy-ios.html">iOS Privacy</a>
-    <a href="privacy-android.html" aria-current="page">Android Privacy</a>
-    <a href="privacy-website.html">Website Privacy</a>
-  </nav>
-  <main class="policy">
+  <main class="policy" id="main-content">
     <h1>Privacy Policy for Aircrew FlightMate Android</h1>
     <p><strong>Last updated:</strong> 21 October 2026</p>
 
@@ -55,11 +56,19 @@
     <h2>8. Changes to This Policy</h2>
     <p>This policy may be updated when the app's data practices or services change. The date above identifies the current version. The <a href="privacy-website.html">Website and Email Privacy notice</a> covers visits to this website and email enquiries.</p>
   </main>
-  <footer>
-    <p>Contact: <a href="mailto:aircrewflightmate@gmail.com">aircrewflightmate@gmail.com</a></p>
-    <p><a href="privacy-ios.html">iOS Privacy Policy</a> · <a href="privacy-android.html">Android Privacy Policy</a> · <a href="privacy-website.html">Website Privacy</a></p>
-    <p>&copy; 2025 Aircrew FlightMate</p>
-    <p style="margin-top: 1rem;">Made with ❤️ by a fellow pilot</p>
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div>
+        <a class="footer-brand" href="./">Aircrew FlightMate</a>
+        <p>Made by a fellow pilot · &copy; 2025 Aircrew FlightMate</p>
+      </div>
+      <nav class="footer-links" id="privacy" aria-label="Privacy and contact">
+        <a href="privacy-ios.html">iOS Privacy</a>
+        <a href="privacy-android.html" aria-current="page">Android Privacy</a>
+        <a id="website-privacy" href="privacy-website.html">Website Privacy</a>
+        <a href="mailto:aircrewflightmate@gmail.com">Contact</a>
+      </nav>
+    </div>
   </footer>
 </body>
 </html>
